@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body {
+   background-image: url("https://media.istockphoto.com/photos/dark-black-and-blue-grungy-wall-background-for-display-or-montage-of-picture-id1150477705?k=6&m=1150477705&s=612x612&w=0&h=q0f-napJKrSFE3ETwopLe6ETDRXk50zv7hctci_-j4A=");
+ }
+
+ .container {
+    background-color: azure;
+    margin: 100px;
+ }

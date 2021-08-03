@@ -17,8 +17,8 @@
 <p><%= link_to "Add a question", new_survey_question_path(@survey) %></p>
 
 
-<p><%= link_to "Edit", edit_survey_path(@survey) %></p>
-<p><%= link_to "Delete", survey_path(@survey),
+<p><%= link_to "Edit survey", edit_survey_path(@survey) %></p>
+<p><%= link_to "Delete survey", survey_path(@survey),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 

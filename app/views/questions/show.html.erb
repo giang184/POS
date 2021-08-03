@@ -2,9 +2,9 @@
 <h2>Question: <%= @question.name %></h2>
 <h3><%= @question.question %></h3>
 
-<p><%= link_to "Edit song", edit_album_song_path(@album, @song) %></p>
-<p><%= link_to "Delete song", album_song_path(@album, @song),
+<p><%= link_to "Edit question", edit_survey_question_path(@survey, @question) %></p>
+<p><%= link_to "Delete question", survey_question_path(@survey, @question),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
 
-<p><%= link_to "Return to album", album_path(@album) %></p>
+<p><%= link_to "Return to survey", survey_path(@survey) %></p>

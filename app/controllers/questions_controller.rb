@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
 
   def create
     @survey = Survey.find(params[:survey_id])
-    @question = @survey.songs.new(question_params)
+    @question = @survey.questions.new(question_params)
     if @question.save
       redirect_to survey_path(@survey)
     else
@@ -15,7 +15,33 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # Other controller actions go here.
+  def show
+    @survey = Survey.find(params[:survey_id])
+    @question = Question.find(params[:id])
+    render :show
+  end
+
+  def edit
+    @survey = Survey.find(params[:survey_id])
+    @question = Question.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to survey_path(@question.survey)
+    else
+      @survey = Survey.find(params[:survey_id])
+      render :edit
+    end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to survey_path(@question.survey)
+  end
 
   private
     def question_params
